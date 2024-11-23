@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+Личный Кабинет - Одностраничное Приложение (SPA)
+Это одностраничное приложение (SPA) для отображения и редактирования данных пользователя в личном кабинете. Приложение позволяет редактировать данные профиля, такие как имя, фамилия, должность, телефон, адрес, интересы, а также загружать аватар. Все данные сохраняются в локальной памяти (localStorage), что позволяет их восстановить после перезагрузки страницы.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Стек технологий
+React - для разработки пользовательского интерфейса.
+Material-UI - для компонентов интерфейса.
+Lodash - для удобных утилит.
+Emotion - для стилизации компонентов.
+1. Клонируйте репозиторий на свою локальную машину:
+   git clone https://github.com/Hedun20/profile-editor.git
 
-## Available Scripts
+2. Перейдите в директорию проекта:
+   cd profile-editor
 
-In the project directory, you can run:
+3. Установите зависимости:
+   npm install
 
-### `npm start`
+4. Запустите приложение:
+   npm run start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   Это запустит приложение на http://localhost:3000
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Описание функционала
+### Отображение данных профиля:
+- Имя
+- Фамилия
+- Должность
+- Номер телефона
+- Адрес
+- Интересы (список тегов)
+- Ссылка на профиль
+- Аватар
 
-### `npm test`
+### Редактирование данных:
+- Все поля редактируемые.
+- Возможность загрузки аватара. Загруженное изображение отображается в реальном времени на странице.
+### Кнопки:
+- **Сохранить**: сохраняет данные в локальной памяти (localStorage). Данные остаются доступными после перезагрузки страницы.
+- **Отменить**: отменяет изменения и возвращает данные к исходным значениям.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Валидация данных:
+- **Имя (Name)**: обязательное поле, длина от 2 до 50 символов, разрешены только буквы и пробелы.
+- **Фамилия (Surname)**: обязательное поле, длина от 2 до 50 символов, разрешены только буквы и пробелы.
+- **Должность (Job Title)**: необязательное поле, длина до 100 символов, разрешены буквы, цифры и пробелы.
+- **Номер телефона (Phone)**: обязательное поле, формат: +<код страны><номер> (например, +79999999999), длина от 10 до 15 символов.
+- **Адрес (Address)**: необязательное поле, длина до 200 символов, разрешены буквы, цифры, запятые, точки, дефисы и пробелы.
+- **Интересы (Interests)**: необязательное поле, список тегов (каждый тег не более 30 символов), максимум 10 тегов.
+- **Ссылка на профиль (Profile Link)**: необязательное поле, должно быть валидным URL, длина до 200 символов.
+- **Аватар (Avatar)**: необязательное поле, поддерживаемые форматы: .jpg, .jpeg, .png, размер до 5 MB.
+- **Публичный/Приватный профиль (Profile Visibility)**: только два значения: Public или Private. Значение по умолчанию: Private.
 
-### `npm run build`
+## Зависимости
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **@emotion/react**: ^11.13.5
+- **@emotion/styled**: ^11.13.5
+- **@mui/icons-material**: ^6.1.8
+- **@mui/material**: ^6.1.8
+- **@testing-library/jest-dom**: ^5.17.0
+- **@testing-library/react**: ^13.4.0
+- **@testing-library/user-event**: ^13.5.0
+- **lodash**: ^4.17.21
+- **react**: ^18.3.1
+- **react-dom**: ^18.3.1
+- **react-scripts**: 5.0.1
+- **web-vitals**: ^2.1.4
